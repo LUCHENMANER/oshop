@@ -29,6 +29,9 @@ import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './shopping-cart.service';
 
 
 
@@ -45,7 +48,9 @@ import { ProductService } from './product.service';
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import { ProductService } from './product.service';
     CustomFormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-       {path:'',component:HomeComponent},
+       {path:'',component:ProductsComponent},
        {path:'login', component:LoginComponent},
        {path:'products',component:ProductsComponent},
        {path:'shopping-cart',component:ShoppingCartComponent},
@@ -81,7 +86,9 @@ import { ProductService } from './product.service';
               UserService,
               AdminAuthGuardService,
               CategoryService,
-             ProductService],
+             ProductService,
+             ShoppingCartService],
+            
   bootstrap: [AppComponent]
 })
 export class AppModule { }
